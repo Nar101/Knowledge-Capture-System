@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(120% 140% at 10% 10%, #1c1c25 0%, #0f0f12 45%, #07070a 100%);
+  color: #f5f5f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.capture-root {
+  width: 100%;
+  padding: 20px;
+  -webkit-app-region: drag;
+}
+
+.capture-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.capture-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.capture-status {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  border: 1px solid transparent;
+}
+
+.capture-status.on {
+  background: rgba(0, 255, 170, 0.1);
+  border-color: rgba(0, 255, 170, 0.4);
+  color: #9dffd9;
+  box-shadow: 0 0 18px rgba(0, 255, 170, 0.2);
+}
+
+.capture-status.off {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #b7b7bf;
+}
+
+.capture-card {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 18px;
+  backdrop-filter: blur(8px);
+}
+
+.source-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #9a9aa2;
+}
+
+.source-value {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 8px 0 10px;
+}
+
+.queue-info {
+  font-size: 12px;
+  color: #9a9aa2;
+}
+
+.capture-actions {
+  display: grid;
+  gap: 10px;
+  -webkit-app-region: no-drag;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.primary {
+  background: #00ffc2;
+  color: #0a0a0c;
+  box-shadow: 0 8px 24px rgba(0, 255, 194, 0.3);
+}
+
+.btn.ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f0f0f2;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}

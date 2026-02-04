@@ -1,0 +1,55 @@
+{
+  "name": "snippet-collector",
+  "version": "1.0.0",
+  "description": "Global Snippet Collector for Mac",
+  "main": "main.js",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"wait-on http://127.0.0.1:5173/capture/index.html && VITE_DEV_SERVER_URL=http://127.0.0.1:5173 electron .\"",
+    "start": "electron .",
+    "build:renderer": "vite build",
+    "pack": "npm run build:renderer && electron-builder --dir",
+    "dist": "npm run build:renderer && electron-builder"
+  },
+  "keywords": [],
+  "author": "Snippet Collector User",
+  "license": "ISC",
+  "dependencies": {
+    "@mozilla/readability": "^0.5.0",
+    "jsdom": "^24.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sql.js": "^1.10.2",
+    "turndown": "^7.1.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "electron": "^39.2.7",
+    "electron-builder": "^24.9.1",
+    "vite": "^5.4.12",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "appId": "com.snippetcollector.pro",
+    "productName": "Snippet Collector Pro",
+    "asarUnpack": [
+      "tools/**"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg"
+      ],
+      "icon": "icon.icns",
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "backgroundColor": "#ffffff",
+      "window": {
+        "width": 540,
+        "height": 380
+      }
+    }
+  }
+}
