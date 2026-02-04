@@ -32,3 +32,13 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
+
+# 测试文件（开发过程中的临时测试脚本）
+test_*.scpt
+*.test.js
+*.spec.js
+
+# 临时文件和图片
+temp.*
+*.tmp
+*_cropped.*
